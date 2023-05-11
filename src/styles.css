@@ -603,22 +603,26 @@ body.detalle .multicard>div {
   flex: 1;
 }
 
-.sunsetsContainer:hover .sunset svg #sol {
+/*.sunsetsContainer:hover .sunset svg #sol {*/
+.sunsetsContainer:hover .sunset svg circle {
   fill:#ff0000;
   stroke:#ff0000;
   cy: 170;
   transition: all 2s ease-in-out;
 }
-.sunsetsContainer:hover .sunset svg #cielo {
+/*.sunsetsContainer:hover .sunset svg #castillo {*/
+.sunsetsContainer:hover .sunset svg rect {
+  fill:#1a0c00;
+  transition: all 2s ease-in-out;
+}
+/*.sunsetsContainer:hover .sunset svg #cielo {*/
+.sunsetsContainer:hover .sunset svg rect:nth-of-type(1) {
   fill:#ffb84d;
   transition: all 2s ease-in-out;
 }
-.sunsetsContainer:hover .sunset svg #mar {
+/*.sunsetsContainer:hover .sunset svg #mar {*/
+.sunsetsContainer:hover .sunset svg rect:nth-of-type(2) {
   fill:#003166;
-  transition: all 2s ease-in-out;
-}
-.sunsetsContainer:hover .sunset svg #castillo {
-  fill:#1a0c00;
   transition: all 2s ease-in-out;
 }
 
