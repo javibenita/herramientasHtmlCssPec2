@@ -438,8 +438,8 @@ body.puntos main h1 {
   }
 
   .pmcard>div:nth-child(1) {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
   }
 }
 
@@ -604,27 +604,63 @@ body.detalle .multicard>div {
 }
 
 /*.sunsetsContainer:hover .sunset svg #sol {*/
-.sunsetsContainer:hover .sunset svg circle {
-  fill:#ff0000;
+.sunsetsContainer:not(:hover) .sunset svg circle {
+  /*fill:#ff0000;
   stroke:#ff0000;
   cy: 170;
-  transition: all 2s ease-in-out;
+  transition-property: fill, stroke, cy;
+  transition-duration: 2s;
+  transition-timing-function: ease-out;*/
+  animation: sol 2s linear infinite;
 }
 /*.sunsetsContainer:hover .sunset svg #castillo {*/
-.sunsetsContainer:hover .sunset svg rect {
-  fill:#1a0c00;
-  transition: all 2s ease-in-out;
+.sunsetsContainer:not(:hover) .sunset svg rect {
+  /*fill:#1a0c00;
+  transition: fill 2s ease-in-out;*/
+  animation: castillo 2s linear infinite;
 }
 /*.sunsetsContainer:hover .sunset svg #cielo {*/
-.sunsetsContainer:hover .sunset svg rect:nth-of-type(1) {
-  fill:#ffb84d;
-  transition: all 2s ease-in-out;
+.sunsetsContainer:not(:hover) .sunset svg rect:nth-of-type(1) {
+  /*fill:#ffb84d;
+  transition: fill 2s ease-in-out;*/
+  animation: cielo 2s linear infinite;
 }
 /*.sunsetsContainer:hover .sunset svg #mar {*/
-.sunsetsContainer:hover .sunset svg rect:nth-of-type(2) {
-  fill:#003166;
-  transition: all 2s ease-in-out;
+.sunsetsContainer:not(:hover) .sunset svg rect:nth-of-type(2) {
+  /*fill:#003166;
+  transition: fill 2s ease-in-out;*/
+  animation: mar 2s linear infinite;
 }
+
+@keyframes sol {
+  0% {}
+  80% {
+    fill: #ff0000;
+    stroke: #ff0000;
+    cy: 170;
+  }
+  100% {
+      fill: #ff0000;
+      stroke: #ff0000;
+      cy: 170;
+  }
+}
+@keyframes castillo {
+  0% {}
+  80% {fill: #1a0c00;}
+  100% {fill: #1a0c00;}
+}
+@keyframes cielo {
+  0% {}
+  80% {fill: #ffb84d;}
+  100% {fill: #ffb84d;}
+}
+@keyframes mar {
+  0% {}
+  80% {fill: #003166;}
+  100% {fill: #003166;}
+}
+
 
 /* ENLACES */
 
