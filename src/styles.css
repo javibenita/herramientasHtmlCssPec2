@@ -199,12 +199,15 @@ a.button {
   border-radius: 60px;
   line-height: 1;
   border: 2px solid var(--contrast-color);
-  transition: all .3s ease;
+  /*transition: all .3s ease;*/
 }
 
 a.button:hover {
-  background: none;
+  background-color: transparent;
   color: var(--contrast-color);
+  transition-property: color, background-color;
+  transition-duration: .3s;
+  transition-timing-function: ease;
 }
 
 figure {
@@ -279,7 +282,7 @@ nav li.active::before {
 /* HOME */
 
 body.home {
-  background-image: url(img/home-hero.jpg);
+  background-image: url(img/home-hero.jpg?as=webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
@@ -369,11 +372,18 @@ body.home nav ul {
   height: 50px;
   clip-path: circle(25px at center);
 }
+.imageclip:hover {
+  clip-path: circle(30px at center);
+  transition: .2s ease;
+}
 
 @media (min-width: 600px) {
   .imageclip {
     height: 60px;
     clip-path: circle(30px at center);
+  }
+  .imageclip:hover {
+    clip-path: circle(35px at center);
   }
 }
 @media (min-width: 800px) {
@@ -381,8 +391,9 @@ body.home nav ul {
     height: 80px;
     clip-path: circle(40px at center);
   }
-}
-@media (min-width: 800px) {
+  .imageclip:hover {
+    clip-path: circle(45px at center);
+  }
   .dot {
     max-width: 100px;
   }
@@ -391,6 +402,9 @@ body.home nav ul {
   .imageclip {
     height: 100px;
     clip-path: circle(50px at center);
+  }
+  .imageclip:hover {
+    clip-path: circle(60px at center);
   }
   .dot {
     max-width: 140px;
