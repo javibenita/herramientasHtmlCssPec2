@@ -5,5 +5,4 @@
     <rect x="200" y="80" width="101" height="11" fill="#FFFFFF"></rect>
     <rect x="300" y="70" width="100" height="21" fill="#FFFFFF"></rect>
     <rect x="370" y="40" width="30" height="41" fill="#FFFFFF"></rect>
-    <!-- <line x1="201" y1="80" x2="300" y2="80" stroke="#aaa818" stroke-width="2"/> -->
 </svg>

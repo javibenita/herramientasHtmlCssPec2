@@ -90,12 +90,16 @@ a:hover {
 }
 
 header {
-  /*height: clamp(220px, 20vh, 260px);*/
-  height: 220px;
+  height: 180px;
   padding-top: 15px;
   padding-bottom: 15px;
   background: var(--bg-color);
   color: var(--text-color2);
+}
+@media (min-width: 600px) {
+  header {
+    height: 220px;
+  }
 }
 
 header h1 {
@@ -103,6 +107,9 @@ header h1 {
 }
 header h1 img.logo {
   width: 6em;
+  display: block;
+  margin: auto;
+  margin-bottom: 0.4em;
 }
 
 body:not(.home) header {
@@ -114,7 +121,6 @@ header nav {
 }
 
 footer {
-  /*height: clamp(60px, 10vh, 80px);*/
   height: 100px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -199,7 +205,6 @@ a.button {
   border-radius: 60px;
   line-height: 1;
   border: 2px solid var(--contrast-color);
-  /*transition: all .3s ease;*/
 }
 
 a.button:hover {
@@ -356,15 +361,10 @@ body.home nav ul {
 .dotsContainer {
   display: flex;
   justify-content: center;
-  /*justify-items: center;*/
-  /*align-items: center;*/
-  /*flex-wrap: wrap;*/
-  /*overflow-x: hidden;*/
 }
 
 .dot {
   flex: 1;
-  /*min-width: 120px;*/
 }
 
 .imageclip {
@@ -374,7 +374,7 @@ body.home nav ul {
 }
 .imageclip:hover {
   clip-path: circle(30px at center);
-  transition: .2s ease;
+  transition: clip-path .2s ease;
 }
 
 @media (min-width: 600px) {
@@ -514,7 +514,6 @@ body.detalle .card {
 }
 
 body.detalle .card>div {
-  /*flex: 1 100%;*/
   padding: 0;
   text-align: center;
 }
@@ -531,12 +530,14 @@ body.detalle .card.cardbutton {
   font-weight: 700;
   border-radius: 10px;
   border: 2px solid var(--contrast-color);
-  transition: all .3s ease;
 }
 
 body.detalle .card.cardbutton:hover {
-  background: none;
+  background-color: transparent;
   color: var(--contrast-color);
+  transition-property: color, background-color;
+  transition-duration: .3s;
+  transition-timing-function: ease;
 }
 
 .buttonContainer {
@@ -617,47 +618,27 @@ body.detalle .multicard>div {
   flex: 1;
 }
 
-/*.sunsetsContainer:hover .sunset svg #sol {*/
+/*.sunset svg #sol {*/
 .sunsetsContainer:not(:hover) .sunset svg circle {
-  /*fill:#ff0000;
-  stroke:#ff0000;
-  cy: 170;
-  transition-property: fill, stroke, cy;
-  transition-duration: 2s;
-  transition-timing-function: ease-out;*/
   animation: sol 2s linear infinite;
 }
-/*.sunsetsContainer:hover .sunset svg #castillo {*/
+/*.sunset svg #castillo {*/
 .sunsetsContainer:not(:hover) .sunset svg rect {
-  /*fill:#1a0c00;
-  transition: fill 2s ease-in-out;*/
   animation: castillo 2s linear infinite;
 }
-/*.sunsetsContainer:hover .sunset svg #cielo {*/
+/*.sunset svg #cielo {*/
 .sunsetsContainer:not(:hover) .sunset svg rect:nth-of-type(1) {
-  /*fill:#ffb84d;
-  transition: fill 2s ease-in-out;*/
   animation: cielo 2s linear infinite;
 }
-/*.sunsetsContainer:hover .sunset svg #mar {*/
+/*.sunset svg #mar {*/
 .sunsetsContainer:not(:hover) .sunset svg rect:nth-of-type(2) {
-  /*fill:#003166;
-  transition: fill 2s ease-in-out;*/
   animation: mar 2s linear infinite;
 }
 
 @keyframes sol {
   0% {}
-  80% {
-    fill: #ff0000;
-    stroke: #ff0000;
-    cy: 170;
-  }
-  100% {
-      fill: #ff0000;
-      stroke: #ff0000;
-      cy: 170;
-  }
+  80% {fill: #ff0000; stroke: #ff0000; cy: 170;}
+  100% {fill: #ff0000; stroke: #ff0000; cy: 170;}
 }
 @keyframes castillo {
   0% {}
